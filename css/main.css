@@ -61,6 +61,9 @@
     font-family: "Public Sans", "Arial", sans-serif;
     font-size: 16px;
     font-weight: 400;
+    width: 100%;
+    overflow-x: hidden;
+    width: 1440px;
   }
   
   
@@ -80,22 +83,21 @@
   /* CONTAINER */
   
   .container{
-    max-width: 1150px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 20px;
-    padding-left: 20px;
+    max-width: 1100px;
+    padding: 0 25px;
+    margin: 0 auto;
   }
   
   /* STICKY-FOOTER */
   .site-main{
-    background: #f2f2f2;
+    background: #FAFAFA;
     flex-grow: 1;
   }
   
-  
   .site-header{
     background: #fff;
+    z-index: 1;
+    padding: 0;
   }
   
   .info{
@@ -104,22 +106,38 @@
     justify-content: space-between;
   }
   
-  .info-list{
+  .info__logo{
+    position: relative;
+    width: 139px;
+    height: 20px;
+  }
+
+  .info__logo::before{
+    position: absolute;
+    content: "";
+    width: 139px;
+    height: 20px;
+    top: 0;
+    left: 0;
+    background-image: url(../images/logo.svg);
+  }
+
+  .info__list{
     display: flex;
     list-style: none;   
   }
   
-  .info-item{
-    padding: 32px 30px;
+  .info__item{
+    padding: 32px 15px;
     border-bottom: 4px solid transparent;
     text-decoration: none;
   }
   
-  .info-item:hover{
+  .info__item:hover{
     border-bottom: 4px solid #33d35e;
   }
   
-  .info-link{
+  .info__link{
     font-size: 14px;
     line-height: 16px;
     letter-spacing: -0.107692px;
@@ -127,13 +145,69 @@
     text-decoration: none;
   }
   
-  .info-link:hover{
+  .info__link:hover{
     color: #2D314D;
   }
-  
+
+  .info__hamberger-btn{
+    background-image: url(../images/toggler-open.svg);
+    background-size: 24px 11px;
+    width: 24px;
+    border: none;
+    background-color: transparent;
+    height: 11px;
+    display: none;
+  }
+  .info__hamburger-menu{
+    display: none;
+    position: absolute;
+    top: 64px;
+    padding: 24px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: linear-gradient(180deg, #2D314D 0%, rgba(45, 49, 77, 0.0001) 100%);
+  }
+  .menu-active{
+    display: block;
+    width: 100%;
+  }
+  .info__hamburger__list{
+    border-radius: 4px;
+    padding: 32px 0;
+    width: 327px;
+    height: 265px;
+    background-color: #FFFFFF;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .info__hamberger-item{
+    margin-bottom: 24px;
+  }
+  .info__hamburger-link{
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 21.09px;
+    letter-spacing: -0.14px;
+  }
+  .info__hamburger-remove{
+    position: absolute;
+    content: "";
+    width: 18px;
+    height: 19px;
+    background-color: transparent;
+    border: none;
+    top: -40px;
+    right: 80px;
+    background-image:url(../images/toggler-close.svg);
+}
+.info__btn-remove{
+  visibility: hidden;
+}
   .info-btn,
-  .hero__info-btn
-  {
+  .hero__info-btn{
     display: inline-block;
     font-weight: 500;
     font-size: 14px;
@@ -155,32 +229,350 @@
   }
   
   .hero{
-    position: relative;
-    padding-top: 170px;
-    padding-bottom: 280px;
-    background: url("../images/Group\ 37.svg") no-repeat;
-    background-size: 1371px 737px;
-    background-position: calc(50% + 300px);
-    top: -35px;
+    padding: 170px 0px;
   }
-  
-  .hero-info{
+  .hero__box{
+    position: relative;
+  }
+  .hero__img::after{
+    position: absolute;
+    content: "";
+    width: 645px;
+    height: 960px;
+    top: -305px;
+    left: 625px;
+    background-image: url(../images/hero-phones-desktop.svg);
+    background-repeat: no-repeat;
+  }
+  .hero__img::before{
+    position: absolute;
+    content: "";
+    width: 835px;
+    height: 960px;
+    top:-430px;
+    left: 435px;
+    background: url("../images/hero-bg-desktop.svg") no-repeat;
+  }
+  .hero__info{
     width: 447px;
   }
-  
-  .hero-title{
-    margin-top: 24px;
+  .hero__theme{
+    margin: 0;
+    margin-bottom: 24px;
     font-weight: 100;
     font-size: 56px;
     line-height: 64px;
     letter-spacing: -1px;
     color: #2D314D;
+    width: 394px;
   }
-  
-  .hero-desc{
+  .hero__commit{
+    width: 447px;
     margin-bottom: 36px;
     font-size: 18px;
     line-height: 28px;
     letter-spacing: -0.28125px;
     color: #9597a5;
-  } 
+  }
+   /*hero-section-end  */
+
+   /* why-section-start */
+  .why{
+    background-color: #F4F5F7;
+    padding: 95px 0;
+  }
+  .why-box{
+    width: 635px;
+    margin-bottom: 72px;
+  }
+  .why-box__theme{
+    color: #2D314D;
+    width: 411px;
+    font-size: 40px;
+    font-weight: 100;
+    line-height: 64px;
+    letter-spacing: -0.71px;
+  }
+  .why-box__commit{
+    width: 635px;
+    font-size: 18px;
+    line-height: 28px;
+    color: #9597a5;
+    letter-spacing: -0.28px;
+  }
+  .why__list{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .why__item{
+    padding-top: 112px;
+    width: 255px;
+    position: relative;
+  }
+  .why__item:nth-child(1)::before{
+    position: absolute;
+    content: "";
+    width: 72px;
+    height: 72px;
+    top: 0px;
+    left: 0px;
+    background-image: url(../images/why-item-1.svg);
+  }
+  .why__item:nth-child(2)::before{
+    position: absolute;
+    content: "";
+    width: 72px;
+    height: 72px;
+    top: 0px;
+    left: 0px;
+    background-image: url(../images/why-item-2.svg);
+  }
+  .why__item:nth-child(3)::before{
+    position: absolute;
+    content: "";
+    width: 72px;
+    height: 72px;
+    top: 0px;
+    left: 0px;
+    background-image: url(../images/why-item-3.svg);
+  }
+  .why__item:nth-child(4)::before{
+    position: absolute;
+    content: "";
+    width: 72px;
+    height: 72px;
+    top: 0px;
+    left: 0px;
+    background-image: url(../images/why-item-4.svg);
+  }
+  .why__theme{
+    color: #2D314D;
+    font-size: 24px;
+    font-weight: 100;
+    line-height: 28px;
+    letter-spacing: -0.43px;
+    margin-bottom: 26px;
+  }
+  .why__commit{
+    width: 255px;
+    font-size: 16px;
+    line-height: 26px;
+    color: #9597a5;
+    letter-spacing: -0.25px;
+  }
+  /* why-section-end */
+  @media only screen and (max-width: 768px){
+    body{
+      width: 769px;
+    }
+    .container{
+      max-width: 719px;
+    }
+    .hero{
+      padding: 60px 0px;
+    }
+    .hero__img::after{
+      position: absolute;
+      content: "";
+      width: 385px;
+      height: 460px;
+      top: -180px;
+      left: 365px;
+      background-image: url(../images/hero-phones-mobile.svg);
+      background-repeat: no-repeat;
+    }
+    .hero__img::before{
+      position: absolute;
+      content: "";
+      width: 454px;
+      height: 480px;
+      top:-280px;
+      left: 290px;
+      background: url("../images/hero-bg-mobile.svg");
+    }
+    .hero__info{
+      width: 350px;
+    }
+    .hero__theme{
+      margin-bottom: 16px;
+      font-weight: 100;
+      font-size: 45px;
+      line-height: 50px;
+      letter-spacing: -0.9px;
+      width: 350px;
+    }
+    .hero__commit{
+      width: 350px;
+      margin-bottom: 32px;
+      font-size: 15px;
+      line-height: 25px;
+      letter-spacing: -0.23px;
+    }
+    .why{
+      padding: 64px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .why-box{
+      width: 350px;
+      margin-bottom: 56px;
+      text-align: center;
+      padding-left: 40px;
+    }
+    .why-box__theme{
+      width: 350px;
+      font-size: 32px;
+      line-height: 45px;
+      letter-spacing: -0.57px;
+    }
+    .why-box__commit{
+      width: 350px;
+      font-size: 15px;
+      line-height: 25px;
+      letter-spacing: -0.23px;
+    }
+    .why__list{
+      flex-direction: column;
+    }
+    .why__item{
+      padding-top: 56px;
+      padding-left: 80px;
+      width: 350px;
+    }
+    .why__item:nth-child(1)::before{
+      top: 60px;
+      left: -15px;
+    }
+    .why__item:nth-child(2)::before{
+      top: 60px;
+      left: -15px;
+    }
+    .why__item:nth-child(3)::before{
+      top: 60px;
+      left: -15px;
+    }
+    .why__item:nth-child(4)::before{
+      top: 60px;
+      left: -15px;
+    }
+    .why__theme{
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 20px;
+      line-height: 28px;
+      letter-spacing: -0.36px;
+    }
+    .why__commit{
+      margin: 0;
+      width: 350px;
+      font-size: 15px;
+      line-height: 25px;
+      letter-spacing: -0.23px;
+    }
+  }
+  @media only screen and (max-width: 376px){
+    body{
+      width: 375px;
+    }
+    .container{
+      max-width: 327px;
+      margin: auto;
+      padding: 0 10px;
+    }
+    .site-header{
+      padding: 22px 4px;
+    }
+    .info__nav{
+      display: none;
+    }
+    .info-btn{
+      display: none;
+    }
+    .info__hamberger-btn{
+      display: block;
+    }
+    .hero__info{
+      padding-top: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 327px;
+    }
+    .hero__theme{
+      font-size: 40px;
+      line-height: 47px;
+      letter-spacing: -0.71px;
+      width: 327px;
+      text-align: center;
+    }
+    .hero__commit{
+      width: 327px;
+      text-align: center;
+    }
+    .hero__img::after{
+      position: absolute;
+      content: "";
+      width: 350px;
+      height: 470px;
+      top: -300px;
+      left: -25px;
+      background-image: url(../images/hero-phones-mobile.svg);
+      background-repeat: no-repeat;
+    }
+    .hero__img::before{
+      position: absolute;
+      content: "";
+      width: 430px;
+      height: 490px;
+      top: -360px;
+      left: -80px;
+      background: url("../images/hero-bg-mobile.svg") no-repeat;
+    }
+    .why{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .why-box{
+      width: 327px;
+      padding: 0;
+    }
+    .why-box__theme{
+      margin: 0;
+      width: 327px;
+      line-height: 37.6px;
+    }
+    .why-box__commit{
+      width: 327px;
+    }
+    .why__item{
+      padding: 96px 0px 32px 0px;
+      width: 327px;
+      text-align: center;
+    }
+    .why__item:nth-child(1):before{
+      top: 10px;
+      left: 130px;
+    }
+    .why__item:nth-child(2):before{
+      top: 10px;
+      left: 130px;
+    }
+    .why__item:nth-child(3):before{
+      top: 10px;
+      left: 130px;
+    }
+    .why__item:nth-child(4):before{
+      top: 10px;
+      left: 130px;
+    }
+    .why__theme{
+      margin-bottom: 26px;
+    }
+    .why__commit{
+      width: 327px;
+    }
+  }
